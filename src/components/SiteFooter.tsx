@@ -1,0 +1,89 @@
+import { categories } from "@/lib/blog-data";
+
+const SiteFooter = () => {
+  return (
+    <footer className="border-t border-border bg-card/50 py-16">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <a
+              href="https://gearuptofit.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-2xl font-bold uppercase tracking-tight mb-4 block"
+            >
+              Gear Up <span className="text-primary">To Fit</span>
+            </a>
+            <p className="text-muted-foreground font-body text-sm leading-relaxed max-w-md">
+              GearUpToFit.com is your comprehensive resource for fitness, running, nutrition, and health.
+              Expert-written articles, honest gear reviews, and science-backed advice to help you achieve
+              your fitness goals.
+            </p>
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h4 className="font-display text-sm uppercase tracking-widest font-semibold mb-4 text-primary">
+              Categories
+            </h4>
+            <ul className="space-y-2">
+              {categories.map((cat) => (
+                <li key={cat.slug}>
+                  <a
+                    href={cat.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-body"
+                  >
+                    {cat.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-display text-sm uppercase tracking-widest font-semibold mb-4 text-primary">
+              Quick Links
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="https://fitness-calculators.gearuptofit.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+                  Fitness Calculators
+                </a>
+              </li>
+              <li>
+                <a href="https://gearuptofit.com/fitness/video-workout/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+                  Video Workouts
+                </a>
+              </li>
+              <li>
+                <a href="https://gearuptofit.com/health/supplements/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+                  Supplements Guide
+                </a>
+              </li>
+              <li>
+                <a href="https://gearuptofit.com/review/smartwatch/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 font-body">
+                  Smartwatch Reviews
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground font-body">
+            © {new Date().getFullYear()} GearUpToFit.com — All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground font-body">
+            Expert Fitness Guidance • Honest Reviews • Real Results
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default SiteFooter;
