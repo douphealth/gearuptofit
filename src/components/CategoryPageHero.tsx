@@ -9,14 +9,29 @@ interface CategoryPageHeroProps {
   description: string;
   stats: { num: string; label: string }[];
   categoryUrl: string;
+  heroImage?: string;
 }
 
-const CategoryPageHero = ({ icon, title, gradient, description, stats, categoryUrl }: CategoryPageHeroProps) => (
-  <section className="relative py-20 md:py-28 overflow-hidden">
-    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-[0.07]`} />
-    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+const CategoryPageHero = ({ icon, title, gradient, description, stats, categoryUrl, heroImage }: CategoryPageHeroProps) => (
+  <section className="relative min-h-[70vh] flex items-end overflow-hidden">
+    {/* Background image */}
+    {heroImage && (
+      <div className="absolute inset-0">
+        <img src={heroImage} alt={`${title} hero`} className="w-full h-full object-cover" loading="eager" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+      </div>
+    )}
 
-    <div className="container relative z-10">
+    {/* Fallback gradient background */}
+    {!heroImage && (
+      <>
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-[0.07]`} />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+      </>
+    )}
+
+    <div className="container relative z-10 py-16 md:py-24">
       <motion.div initial={{ opacity: 0, y: 20, filter: "blur(4px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
         <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary font-display uppercase tracking-widest mb-8 transition-colors duration-200">
           <ArrowLeft className="w-4 h-4" /> Back to Hub
@@ -24,13 +39,13 @@ const CategoryPageHero = ({ icon, title, gradient, description, stats, categoryU
 
         <div className="flex items-center gap-4 mb-6">
           <span className="text-5xl">{icon}</span>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/25 rounded-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/25 rounded-sm backdrop-blur-sm">
             <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-primary" /></span>
             <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary font-display">{title} Hub</span>
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.9] mb-6 font-display">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.9] mb-6 font-display max-w-3xl">
           <span className="block">{title}</span>
           <span className="block text-gradient-red">Command Center</span>
         </h1>
