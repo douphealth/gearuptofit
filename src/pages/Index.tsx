@@ -16,8 +16,8 @@ const Index = () => {
       <SiteHeader />
       <main>
         <HeroSection />
-        <LiveTicker />
         <FitnessQuiz />
+        <LiveTicker />
         <CategoryPillars />
         <FeaturedArticle />
         <TrendingSection />
