@@ -123,9 +123,9 @@ const TickerCard = ({ article }: { article: TickerArticle }) => {
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex-shrink-0 w-[340px] bg-card border border-border rounded-sm overflow-hidden card-hover cursor-pointer"
+      className="group flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] bg-card border border-border rounded-sm overflow-hidden card-hover cursor-pointer"
     >
-      <div className="relative h-[180px] overflow-hidden">
+      <div className="relative h-[140px] sm:h-[160px] md:h-[180px] overflow-hidden">
         <img
           src={article.imageUrl}
           alt={article.title}
