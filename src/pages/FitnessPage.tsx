@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
+import heroImg from "@/assets/hero-fitness-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Dumbbell, Flame, StretchHorizontal, Zap, Sprout, Trophy, Target, Heart, Brain, Activity } from "lucide-react";
