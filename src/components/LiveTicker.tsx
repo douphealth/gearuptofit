@@ -123,9 +123,9 @@ const TickerCard = ({ article }: { article: TickerArticle }) => {
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex-shrink-0 w-[340px] bg-card border border-border rounded-sm overflow-hidden card-hover cursor-pointer"
+      className="group flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] bg-card border border-border rounded-sm overflow-hidden card-hover cursor-pointer"
     >
-      <div className="relative h-[180px] overflow-hidden">
+      <div className="relative h-[140px] sm:h-[160px] md:h-[180px] overflow-hidden">
         <img
           src={article.imageUrl}
           alt={article.title}
@@ -176,22 +176,22 @@ const LiveTicker = () => {
   // Duplicate articles for seamless infinite scroll
   const duplicated = [...tickerArticles, ...tickerArticles];
 
-  // Total width of one set (340px card + 16px gap) × count
-  const singleSetWidth = tickerArticles.length * (340 + 16);
+  // Use a reasonable average card width for animation calculation
+  const singleSetWidth = tickerArticles.length * (300 + 16);
 
   return (
-    <section className="py-12 md:py-16 border-y border-border/50 bg-card/30 overflow-hidden">
-      <div className="container mb-8">
+    <section className="py-8 sm:py-12 md:py-16 border-y border-border/50 bg-card/30 overflow-hidden">
+      <div className="container mb-5 sm:mb-8 px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center justify-between"
+          className="flex items-center justify-between gap-3"
         >
           <div className="flex items-center gap-3">
             <LivePulse />
-            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight font-display">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-bold uppercase tracking-tight font-display">
               Latest from GearUpToFit
             </h2>
             <span className="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-display uppercase tracking-widest bg-primary/15 text-primary border border-primary/30 rounded-sm font-semibold">
