@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
-import { categories } from "@/lib/blog-data";
+import { Link, useLocation } from "react-router-dom";
+
+const navItems = [
+  { label: "Quiz", href: "/#quiz", internal: true },
+  { label: "Fitness", to: "/fitness" },
+  { label: "Running", to: "/running" },
+  { label: "Nutrition", to: "/nutrition" },
+  { label: "Reviews", to: "/reviews" },
+  { label: "Calculators", to: "/calculators" },
+];
 
 const SiteHeader = () => {
+  const location = useLocation();
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -10 }}
@@ -11,40 +22,38 @@ const SiteHeader = () => {
     >
       <div className="container flex items-center justify-between h-16">
         {/* Logo */}
-        <a
-          href="https://gearuptofit.com/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/"
           className="font-display text-xl font-bold uppercase tracking-tight"
         >
           Gear Up <span className="text-primary">To Fit</span>
-        </a>
+        </Link>
 
         {/* Nav links - desktop */}
         <nav className="hidden md:flex items-center gap-1">
-          <a
-            href="#quiz"
-            className="px-3 py-2 text-xs font-display uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-200"
-          >
-            Quiz
-          </a>
-          {categories.slice(0, 4).map((cat) => (
-            <a
-              key={cat.slug}
-              href={cat.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-2 text-xs font-display uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              {cat.name}
-            </a>
-          ))}
-          <a
-            href="#calculators"
-            className="px-3 py-2 text-xs font-display uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-200"
-          >
-            Calculators
-          </a>
+          {navItems.map((item) =>
+            item.to ? (
+              <Link
+                key={item.label}
+                to={item.to}
+                className={`px-3 py-2 text-xs font-display uppercase tracking-widest transition-colors duration-200 ${
+                  location.pathname === item.to
+                    ? "text-primary font-bold"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className="px-3 py-2 text-xs font-display uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </nav>
 
         {/* CTA */}
@@ -52,7 +61,7 @@ const SiteHeader = () => {
           href="https://gearuptofit.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 bg-primary font-display text-xs uppercase tracking-widest font-semibold transition-all duration-200 hover:brightness-110 active:scale-[0.97] rounded-sm hidden sm:inline-flex"
+          className="px-4 py-2 bg-primary font-display text-xs uppercase tracking-widest font-semibold transition-all duration-200 hover:brightness-110 active:scale-[0.97] rounded-sm hidden sm:inline-flex text-primary-foreground"
         >
           Visit Site
         </a>

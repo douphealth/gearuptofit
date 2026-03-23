@@ -1,5 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { categories } from "@/lib/blog-data";
+
+const categoryRoutes: Record<string, string> = {
+  fitness: "/fitness",
+  running: "/running",
+  nutrition: "/nutrition",
+  health: "/health",
+  "weight-loss": "/fitness",
+  review: "/reviews",
+};
 
 const container = {
   hidden: {},
@@ -38,28 +48,29 @@ const CategoryPillars = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {categories.map((cat) => (
-            <motion.a
-              key={cat.slug}
-              variants={item}
-              href={cat.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-card border-t-2 border-t-primary border-border p-6 card-hover block overflow-hidden rounded-sm"
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-500" />
-              <span className="text-3xl mb-3 block">{cat.icon}</span>
-              <h3 className="text-xl font-bold uppercase tracking-wide font-display mb-1 group-hover:text-primary transition-colors duration-200">
-                {cat.name}
-              </h3>
-              <p className="text-sm text-muted-foreground font-body mb-3 leading-relaxed">
-                {cat.description}
-              </p>
-              <span className="text-xs font-display uppercase tracking-widest text-primary">
-                {cat.postCount} Articles →
-              </span>
-            </motion.a>
-          ))}
+          {categories.map((cat) => {
+            const route = categoryRoutes[cat.slug];
+            return (
+              <motion.div key={cat.slug} variants={item}>
+                <Link
+                  to={route || "/"}
+                  className="group relative bg-card border-t-2 border-t-primary border-border p-6 card-hover block overflow-hidden rounded-sm"
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-500" />
+                  <span className="text-3xl mb-3 block">{cat.icon}</span>
+                  <h3 className="text-xl font-bold uppercase tracking-wide font-display mb-1 group-hover:text-primary transition-colors duration-200">
+                    {cat.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-body mb-3 leading-relaxed">
+                    {cat.description}
+                  </p>
+                  <span className="text-xs font-display uppercase tracking-widest text-primary">
+                    {cat.postCount} Articles →
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
