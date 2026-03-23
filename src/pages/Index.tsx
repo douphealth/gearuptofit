@@ -1,5 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import HeroSection from "@/components/HeroSection";
+import LiveTicker from "@/components/LiveTicker";
 import FitnessQuiz from "@/components/FitnessQuiz";
 import CategoryPillars from "@/components/CategoryPillars";
 import FeaturedArticle from "@/components/FeaturedArticle";
@@ -15,6 +16,7 @@ const Index = () => {
       <SiteHeader />
       <main>
         <HeroSection />
+        <LiveTicker />
         <FitnessQuiz />
         <CategoryPillars />
         <FeaturedArticle />
