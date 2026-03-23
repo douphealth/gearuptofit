@@ -2,6 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
 import CalculatorsHub from "@/components/CalculatorsHub";
+import heroImg from "@/assets/hero-calculators-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Scale, Flame, Salad, Activity, Target, Dumbbell, Heart, Zap } from "lucide-react";
@@ -116,7 +117,7 @@ const CalculatorsPage = () => (
   <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     <SiteHeader />
     <main>
-      <CategoryPageHero icon="🔢" title="Calculators" gradient="from-fuchsia-600 to-pink-700" description="16 science-based fitness calculators — body metrics, metabolism, nutrition, and activity. All free, no signup required." stats={[{ num: "16", label: "Calculators" }, { num: "4", label: "Categories" }, { num: "0", label: "Signup Needed" }]} categoryUrl="https://fitness-calculators.gearuptofit.com/" />
+      <CategoryPageHero icon="🔢" title="Calculators" gradient="from-fuchsia-600 to-pink-700" description="16 science-based fitness calculators — body metrics, metabolism, nutrition, and activity. All free, no signup required." stats={[{ num: "16", label: "Calculators" }, { num: "4", label: "Categories" }, { num: "0", label: "Signup Needed" }]} categoryUrl="https://fitness-calculators.gearuptofit.com/" heroImage={heroImg} />
       <CategoryQuiz steps={steps} getRecommendation={getRec} badge="Calculator Finder · 20 Seconds" heading={<>Find Your <span className="text-gradient-red block mt-2">Numbers</span></>} subheading="Answer 2 quick questions and get pointed to the exact calculators you need — no wading through tools you don't." stepLabels={["Category", "Goal"]} />
       <CalculatorsHub />
     </main>

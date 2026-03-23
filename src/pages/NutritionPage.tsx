@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
+import heroImg from "@/assets/hero-nutrition-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Flame, Dumbbell, Heart, Zap, Leaf, Wheat, Timer, UtensilsCrossed, Pill, Scale } from "lucide-react";
@@ -132,7 +133,7 @@ const NutritionPage = () => (
   <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     <SiteHeader />
     <main>
-      <CategoryPageHero icon="🥗" title="Nutrition" gradient="from-emerald-600 to-green-700" description="Science-backed diet guides, supplement research, macros, and meal planning — no fads, just evidence." stats={[{ num: "35+", label: "Nutrition Articles" }, { num: "16", label: "Diet Calculators" }, { num: "100%", label: "Science-Backed" }]} categoryUrl="https://gearuptofit.com/nutrition/" />
+      <CategoryPageHero icon="🥗" title="Nutrition" gradient="from-emerald-600 to-green-700" description="Science-backed diet guides, supplement research, macros, and meal planning — no fads, just evidence." stats={[{ num: "35+", label: "Nutrition Articles" }, { num: "16", label: "Diet Calculators" }, { num: "100%", label: "Science-Backed" }]} categoryUrl="https://gearuptofit.com/nutrition/" heroImage={heroImg} />
       <CategoryQuiz steps={steps} getRecommendation={getRec} badge="Nutrition Quiz · 30 Seconds" heading={<>Fuel Your <span className="text-gradient-red block mt-2">Body Right</span></>} subheading="Answer 3 questions about your nutrition goals, dietary preferences, and challenges — get a personalized plan with the exact guides and calculators you need." stepLabels={["Goal", "Diet", "Challenge"]} />
     </main>
     <SiteFooter />

@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
+import heroImg from "@/assets/hero-fitness-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Dumbbell, Flame, StretchHorizontal, Zap, Sprout, Trophy, Target, Heart, Brain, Activity } from "lucide-react";
@@ -128,7 +129,7 @@ const FitnessPage = () => (
   <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     <SiteHeader />
     <main>
-      <CategoryPageHero icon="💪" title="Fitness" gradient="from-blue-600 to-indigo-700" description="Workout routines, HIIT training, strength programs, and exercise science — all backed by research and real-world testing." stats={[{ num: "50+", label: "Fitness Articles" }, { num: "12+", label: "Training Plans" }, { num: "16", label: "Calculators" }]} categoryUrl="https://gearuptofit.com/fitness/" />
+      <CategoryPageHero icon="💪" title="Fitness" gradient="from-blue-600 to-indigo-700" description="Workout routines, HIIT training, strength programs, and exercise science — all backed by research and real-world testing." stats={[{ num: "50+", label: "Fitness Articles" }, { num: "12+", label: "Training Plans" }, { num: "16", label: "Calculators" }]} categoryUrl="https://gearuptofit.com/fitness/" heroImage={heroImg} />
       <CategoryQuiz steps={steps} getRecommendation={getRec} badge="Fitness Quiz · 30 Seconds" heading={<>Find Your <span className="text-gradient-red block mt-2">Perfect Workout</span></>} subheading="Answer 3 quick questions and get a personalized training plan with the exact articles, routines, and calculators for your goals." stepLabels={["Style", "Level", "Goal"]} />
     </main>
     <SiteFooter />

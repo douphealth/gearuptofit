@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
+import heroImg from "@/assets/hero-running-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Timer, Mountain, Route, Footprints, MapPin, CloudSun, Shirt, Gauge, Salad, Star } from "lucide-react";
@@ -128,7 +129,7 @@ const RunningPage = () => (
   <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     <SiteHeader />
     <main>
-      <CategoryPageHero icon="🏃" title="Running" gradient="from-emerald-600 to-teal-700" description="Shoe reviews, training plans, race strategies, and running gear — tested by real runners on real trails and roads." stats={[{ num: "40+", label: "Running Articles" }, { num: "50+", label: "Shoes Tested" }, { num: "150+", label: "Trail Miles" }]} categoryUrl="https://gearuptofit.com/running/" />
+      <CategoryPageHero icon="🏃" title="Running" gradient="from-emerald-600 to-teal-700" description="Shoe reviews, training plans, race strategies, and running gear — tested by real runners on real trails and roads." stats={[{ num: "40+", label: "Running Articles" }, { num: "50+", label: "Shoes Tested" }, { num: "150+", label: "Trail Miles" }]} categoryUrl="https://gearuptofit.com/running/" heroImage={heroImg} />
       <CategoryQuiz steps={steps} getRecommendation={getRec} badge="Running Quiz · 30 Seconds" heading={<>Find Your <span className="text-gradient-red block mt-2">Running Edge</span></>} subheading="Answer 3 questions about your distance, terrain, and needs — get a precision-matched running plan with the best shoes, training, and nutrition." stepLabels={["Distance", "Terrain", "Need"]} />
     </main>
     <SiteFooter />

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
+import heroImg from "@/assets/hero-reviews-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Footprints, Mountain, MapPin, Gauge, DollarSign, Crown, Sparkles, Watch, Headphones, Battery, Wifi, Heart, Music, Mic, Shield } from "lucide-react";
@@ -188,7 +189,7 @@ const ReviewsPage = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SiteHeader />
       <main>
-        <CategoryPageHero icon="⭐" title="Reviews" gradient="from-amber-600 to-orange-700" description="In-depth, real-world tested gear reviews — running shoes, smartwatches, headphones, and more. No sponsored content, just honest opinions." stats={[{ num: "45+", label: "Gear Reviews" }, { num: "500+", label: "Hours Tested" }, { num: "100%", label: "Unbiased" }]} categoryUrl="https://gearuptofit.com/review/" />
+        <CategoryPageHero icon="⭐" title="Reviews" gradient="from-amber-600 to-orange-700" description="In-depth, real-world tested gear reviews — running shoes, smartwatches, headphones, and more. No sponsored content, just honest opinions." stats={[{ num: "45+", label: "Gear Reviews" }, { num: "500+", label: "Hours Tested" }, { num: "100%", label: "Unbiased" }]} categoryUrl="https://gearuptofit.com/review/" heroImage={heroImg} />
 
         {/* Quiz selector tabs */}
         <section className="pt-8 pb-0">
