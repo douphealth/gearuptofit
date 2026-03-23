@@ -129,7 +129,7 @@ const HealthPage = () => (
   <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     <SiteHeader />
     <main>
-      <CategoryPageHero icon="❤️" title="Health" gradient="from-rose-600 to-pink-700" description="Wellness tips, recovery science, supplements research, and health tools — evidence-based approaches to living longer and better." stats={[{ num: "30+", label: "Health Articles" }, { num: "16", label: "Health Calculators" }, { num: "100%", label: "Evidence-Based" }]} categoryUrl="https://gearuptofit.com/health/" />
+      <CategoryPageHero icon="❤️" title="Health" gradient="from-rose-600 to-pink-700" description="Wellness tips, recovery science, supplements research, and health tools — evidence-based approaches to living longer and better." stats={[{ num: "30+", label: "Health Articles" }, { num: "16", label: "Health Calculators" }, { num: "100%", label: "Evidence-Based" }]} categoryUrl="https://gearuptofit.com/health/" heroImage={heroImg} />
       <CategoryQuiz steps={steps} getRecommendation={getRec} badge="Health Quiz · 30 Seconds" heading={<>Optimize Your <span className="text-gradient-red block mt-2">Wellness</span></>} subheading="Answer 3 questions about your health focus, activity level, and learning style — get a personalized wellness plan with targeted guides and tools." stepLabels={["Focus", "Activity", "Approach"]} />
     </main>
     <SiteFooter />
