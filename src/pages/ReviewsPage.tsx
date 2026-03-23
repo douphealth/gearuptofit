@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
+import heroImg from "@/assets/hero-reviews-page.jpg";
+import CategoryPageHero from "@/components/CategoryPageHero";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Footprints, Mountain, MapPin, Gauge, DollarSign, Crown, Sparkles, Watch, Headphones, Battery, Wifi, Heart, Music, Mic, Shield } from "lucide-react";

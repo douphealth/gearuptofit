@@ -2,6 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CategoryPageHero from "@/components/CategoryPageHero";
 import CalculatorsHub from "@/components/CalculatorsHub";
+import heroImg from "@/assets/hero-calculators-page.jpg";
 import CategoryQuiz from "@/components/CategoryQuiz";
 import type { QuizStep, Recommendation } from "@/components/CategoryQuiz";
 import { Scale, Flame, Salad, Activity, Target, Dumbbell, Heart, Zap } from "lucide-react";
